@@ -1,0 +1,20 @@
+contract SolidityTest {
+   uint public storedData; // State variable
+   function getStoredData() public returns (uint){
+       return storedData;
+}
+   function setStoredData(uint new_storedData) public{
+       storedData = new_storedData;
+}
+}
+//Local Variable
+function getResult() public view returns(uint){
+    // Initializing local variables
+      uint local_var1 = 1; 
+      uint local_var2 = 2;
+      uint result = local_var1 + local_var2;
+       
+      // Access the local variable
+      return result; 
+}
+  
