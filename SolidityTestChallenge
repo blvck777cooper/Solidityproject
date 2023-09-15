@@ -1,20 +1,23 @@
-contract SolidityTest {
-   uint public storedData; // State variable
-   function getStoredData() public returns (uint){
-       return storedData;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+
+contract Tokens {
+
+    string public tokenName="Emmanuel";
+    string public tokenSymbol="Wallace Organization";
+    uint256 public totalSupply=0;
+
+    mapping(address => uint256) public balances;
+
+    function mint(address _to, uint256 _value) external {
+        totalSupply += _value;
+        balances[_to] += _value;
+    }
+
+    function burn(uint256 _value) external {
+        require(balances[msg.sender] >= _value, "Insufficient balance");
+        totalSupply -= _value;
+        balances[msg.sender] -= _value;
+    }
+
 }
-   function setStoredData(uint new_storedData) public{
-       storedData = new_storedData;
-}
-}
-//Local Variable
-function getResult() public view returns(uint){
-    // Initializing local variables
-      uint local_var1 = 1; 
-      uint local_var2 = 2;
-      uint result = local_var1 + local_var2;
-       
-      // Access the local variable
-      return result; 
-}
-  
