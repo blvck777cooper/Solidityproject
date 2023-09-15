@@ -3,8 +3,8 @@ pragma solidity 0.8.18;
 
 contract Tokens {
 
-    string public tokenName="Brian";
-    string public tokenSymbol="Chandigarh University";
+    string public tokenName="Emmanuel";
+    string public tokenSymbol="Wallance Organization";
     uint256 public totalSupply=0;
 
     mapping(address => uint256) public balances;
